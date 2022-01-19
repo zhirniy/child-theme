@@ -1,0 +1,168 @@
+/*
+Theme Name:     Twenty Twenty One Child
+Theme URI:      http: //localhost/
+Description:    A Twenty Twenty One Child theme
+Author:         Denis Zhirniy
+Author URI:     https://github.com/zhirniy
+Template:       twentytwentyone
+Version:        0.1.0
+*/
+
+#custom-search::-webkit-search-cancel-button {
+    display: none;
+}
+
+.ajax_search_results{
+    position: relative;
+}
+
+.search-posts-items{
+    padding: 0;
+    flex-grow: 1;
+    max-width: inherit;
+    border: var(--form--border-width) solid var(--form--border-color);
+    border-width: 3px;
+    margin: 0 2px;
+    margin-top: calc(var(--global--spacing-vertical) / 3);
+    margin-right: calc(0.66 * var(--global--spacing-horizontal));
+    max-width: 410px;
+    position: absolute;
+    width: 100%;
+    left: 0;
+}
+
+.search-post-item{
+    list-style-type: none;
+    pointer-events: all;
+}
+
+.search-form-custom .custom-search-field{
+    max-width: 410px;
+    min-height: 72px;
+}
+
+.search-form-custom{
+    position: relative;
+}
+
+.search-form-custom .search-clean{
+    position: absolute;
+    display: none;
+    left: 385px;
+    bottom: 0px;
+    top: 50px;
+    margin: auto;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    cursor: pointer;
+}
+
+.search-form-custom .search-clean:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 16px;
+    height: 3px;
+    background: #000000;
+    transform: rotate(45deg);
+}
+
+.search-form-custom .search-clean:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 16px;
+    height: 3px;
+    background: #000000;
+    transform: rotate(135deg);
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .search-form-custom .search-clean{
+        bottom: -2px;
+    }
+}
+
+@-moz-document url-prefix() {
+    .search-form-custom .search-clean{
+        bottom: 4px;
+    }
+}
+
+.search-post-link{
+    text-decoration: none;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    background: #ffffff;
+    transition: background 0.3s ease-out;
+}
+
+.search-post-link:hover,
+.search-post-link:focus,
+.search-post-link:active{
+    background: #d1e4dd !important;
+}
+
+
+.search-post-link:visited{
+    text-decoration: none;
+}
+
+.search-form-custom{
+    position: relative;
+}
+
+@media screen and (max-width: 767px) {
+    .search-submit-mob{
+        position: absolute;
+        right: 0;
+        bottom: 0px;
+        border-width: 1px !important;
+    }
+
+    .search-submit-mob:hover{
+        background-color: #030b19;
+    }
+
+    .search-form-custom .search-clean{
+       right: 150px;
+       left: auto;
+    }
+
+    .custom-search-field{
+        padding-right: 150px !important;
+    }
+
+    .search-form-custom .search-submit-mob{
+        max-width: 140px;
+        width: 140px;
+        text-align: center;
+    }
+
+    .search-form-custom .custom-search-field{
+        max-width: 100%;
+        margin-right: 0;
+    }
+
+    .search-posts-items{
+        max-width: 100%;
+    }
+
+    @-moz-document url-prefix() {
+        .search-form-custom .search-submit-mob {
+            padding: 20px;
+        }
+    }
+}
