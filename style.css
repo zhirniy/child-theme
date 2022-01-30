@@ -8,6 +8,11 @@ Template:       twentytwentyone
 Version:        0.1.0
 */
 
+:root {
+    --main-bg-color-white: #ffffff;
+    --main-bg-color-white2: #d1e4dd;
+}
+
 #custom-search::-webkit-search-cancel-button {
     display: none;
 }
@@ -19,12 +24,9 @@ Version:        0.1.0
 .search-posts-items{
     padding: 0;
     flex-grow: 1;
-    max-width: inherit;
     border: var(--form--border-width) solid var(--form--border-color);
     border-width: 3px;
-    margin: 0 2px;
-    margin-top: calc(var(--global--spacing-vertical) / 3);
-    margin-right: calc(0.66 * var(--global--spacing-horizontal));
+    margin:  calc(var(--global--spacing-vertical) / 3) calc(0.66 * var(--global--spacing-horizontal)) 0 2px ;
     max-width: 410px;
     position: absolute;
     width: 100%;
@@ -49,7 +51,7 @@ Version:        0.1.0
     position: absolute;
     display: none;
     left: 385px;
-    bottom: 0px;
+    bottom: 0;
     top: 50px;
     margin: auto;
     width: 20px;
@@ -64,7 +66,6 @@ Version:        0.1.0
     left: 0;
     bottom: 0;
     top: 0;
-    bottom: 0;
     margin: auto;
     width: 16px;
     height: 3px;
@@ -78,7 +79,6 @@ Version:        0.1.0
     left: 0;
     bottom: 0;
     top: 0;
-    bottom: 0;
     margin: auto;
     width: 16px;
     height: 3px;
@@ -105,14 +105,14 @@ Version:        0.1.0
     display: flex;
     align-items: center;
     box-sizing: border-box;
-    background: #ffffff;
+    background: var(--main-bg-color-white);
     transition: background 0.3s ease-out;
 }
 
 .search-post-link:hover,
 .search-post-link:focus,
 .search-post-link:active{
-    background: #d1e4dd !important;
+    background: var(--main-bg-color-white2) !important;
 }
 
 
@@ -128,7 +128,7 @@ Version:        0.1.0
     .search-submit-mob{
         position: absolute;
         right: 0;
-        bottom: 0px;
+        bottom: 0;
         border-width: 1px !important;
     }
 

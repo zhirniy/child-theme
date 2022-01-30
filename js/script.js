@@ -1,19 +1,17 @@
 jQuery(document).ready(function ($) {
-    const ajaxurl = '/wp-admin/admin-ajax.php';
-
     var timer = 0;
 
-    $('#ajax-serach-form').submit(function(e){
+    $('#ajax-search-form').submit(function(e){
         e.preventDefault();
         search();
     });
 
-    $('#custom-search').keyup(function(e) {
+    $('#custom-search').keyup(function() {
         search();
     });
 
     //clean result
-    $('#search-clean').click(function(e) {
+    $('#search-clean').click(function() {
         $('#ajax_search_results').empty();
         $('#custom-search').val('');
         $('#search-clean').css('display', 'none');
@@ -21,19 +19,19 @@ jQuery(document).ready(function ($) {
 
 /*Ajax search posts*/
     function search(){
-        var paramsSearch = $("#custom-search").val();
+        let paramsSearch = $("#custom-search").val();
             clearTimeout(timer);
             timer = setTimeout(function () {
                 if(paramsSearch.length > 1){
                     $.ajax({
-                        data: {action: 'search_post', 'params_search':paramsSearch},
+                        data: {action: 'search_post', 'params_search':paramsSearch, 'nonce': ajax_var.nonce},
                         type: 'post',
-                        url: ajaxurl,
+                        url: ajax_var.url,
                         success: function(data) {
                             $('#ajax_search_results').empty().append(data);
                             $('#search-clean').css('display', 'block');
                         },
-                        error : function(jqXHR, textStatus, errorThrown) {
+                        error : function(jqXHR, textStatus) {
                             console.log(textStatus);
                         },
                     });
